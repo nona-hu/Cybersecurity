@@ -37,9 +37,9 @@ The configuration details of each machine may be found below.
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
 | Jump Box | Gateway  | 10.0.0.5   | Ubuntu Linux     |
-| Web 1    | Webserver|            | Ubuntu Linux     |
-| Web 2    | Webserver|            | Ubuntu Linux     |
-| ELK      | ElasticSearch |            | Ubuntu Linux     |
+| Web 1    | Webserver| 10.0.0.6   | Ubuntu Linux     |
+| Web 2    | Webserver| 10.0.0.4   | Ubuntu Linux     |
+| ELK      | ElasticSearch | 10.2.0.4   | Ubuntu Linux     |
 
 ### Access Policies
 

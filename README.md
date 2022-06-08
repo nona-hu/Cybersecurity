@@ -4,11 +4,11 @@
 
 The files in this repository were used to configure the network depicted below.
 
-Cloud network diagram: (github.com/nona-hu/Diagrams/Cloud-Security-Network.png)
+[Cloud network diagram](https://github.com/nona-hu/Cybersecurity/blob/main/Diagrams/Cloud%20Security%20Network.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the filebeat-playbook.yml file may be used to install only certain pieces of it, such as Filebeat.
 
-[Filebeat Config](https://github.com/nona-hu/Cybersecurity/blob/main/Ansible/filebeat-config.yml) 
+[Filebeat Configuration](https://github.com/nona-hu/Cybersecurity/blob/main/Ansible/filebeat-config.yml) 
 
 This document contains the following details:
 - Description of the Topology

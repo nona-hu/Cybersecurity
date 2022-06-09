@@ -115,6 +115,6 @@ SSH into the control node and follow the steps below:
 Filebeat forwards and centrallises log data and is useful for monitoring system logs.
 
 To install filebeat you must first SSH into the Jumpbox and launch the ansible container. Then follow the below steps:
-- Copy the Filebeat configuration file using the 'curl' command 
-' curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat >> /etc/ansible/filebeat-config.yml '
+- Copy the Filebeat configuration file using the `curl` command 
+' `curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat >> /etc/ansible/filebeat-config.yml`
 

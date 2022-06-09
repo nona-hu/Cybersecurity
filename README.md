@@ -93,7 +93,7 @@ These Beats allow us to collect the following information from each machine:
 Different types of beats can be installed on servers to collect and send various information to ElasticSearch.
 
 - Auditbeat - collects and audits data in relation to users and processes on the chosen system
-- Filebeat - forwards and centralises log data. e.g. system logs, user logins etc.
+- [Filebeat](SSH-login.png) - forwards and centralises log data. e.g. system logs, user logins etc.
 - Functionbeat - collects and forwards data in a serverless network architecture
 - Heartbeat - monitors systems for their uptime through probing
 - Metricbeat - collects metric data from all systems including cpu usage, memory, file system etc.

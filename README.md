@@ -104,8 +104,8 @@ Different types of beats can be installed on servers to collect and send various
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the install-elk.yml file to /etc/ansible directory. Ensure the remote_user is the same username on your ELK VM. i have used azureuser. 
-- Update the [hosts file] to include the destination IPs and attributes
+- Copy the [install-elk.yml](Diagrams/install-elk.png) file to /etc/ansible directory. Ensure the remote_user is the same username on your ELK VM. i have used azureuser. 
+- Update the [hosts file](hosts.png) to include the destination IPs and attributes
 - The ELK server runs on port 5601. Create an incoming rule to allow TCP traffic over port 5601 from your IP address. 
 - Run the playbook, and verify that you can load the ELK stack server from your browser at http://[your.VM.IP]:5601/app/kibana
 

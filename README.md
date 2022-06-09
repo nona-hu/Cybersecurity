@@ -110,7 +110,7 @@ SSH into the control node and follow the steps below:
 - The ELK server runs on `port 5601`. Create an incoming rule to allow TCP traffic over port 5601 from your IP address. 
 - Run the playbook, and verify that you can load the ELK stack server from your browser at http://[your.VM.IP]:5601/app/kibana. 
 - If configured correctly, you should see this kibana [homepage](Diagrams/kibanahome.png) 
-![kibanahome.png]()
+![kibanahome.png](https://github.com/nona-hu/Cybersecurity/blob/main/Diagrams/kibanahome.png)
 
 ### Installing Filebeat
 
@@ -127,5 +127,6 @@ To install filebeat you must first SSH into the Jumpbox and launch the ansible c
 ![installation.png](https://github.com/nona-hu/Cybersecurity/blob/main/Diagrams/installation.png)
 
 Once the installtion is finalised, http://[your.VM.IP]:5601/app/kibana will automatically update with the new dashboard
+
 ![dashboard.png](https://github.com/nona-hu/Cybersecurity/blob/main/Diagrams/dashboard.png)
 - 

@@ -78,7 +78,7 @@ The playbook implements the following tasks:
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
 [Docker PS](Diagrams/dockerps.png)
-[dockerps.png]()
+[dockerps.png](https://github.com/nona-hu/Cybersecurity/blob/main/Diagrams/dockerps.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -125,4 +125,6 @@ To install filebeat you must first SSH into the Jumpbox and launch the ansible c
 - Run `ansible-playbook filebeat-playbook.yml` on the command line to complete the installation
 ![installation.png](https://github.com/nona-hu/Cybersecurity/blob/main/Diagrams/installation.png)
 
+Once the installtion is finalised, http://[your.VM.IP]:5601/app/kibana will automatically update with the new dashboard
+[dashboard.png]()
 - 

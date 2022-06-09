@@ -122,6 +122,6 @@ To install filebeat you must first SSH into the Jumpbox and launch the ansible c
 - Create another ansible playbook called filebeat-playbook.yml in /etc/ansible directory with the [instructions](Diagrams/Instructions.png). The playbook should look like [this](https://github.com/nona-hu/Cybersecurity/blob/main/Ansible/filebeat-playbook.yml)
 - Open the ansible-config.yml and ensure that the remote_user is uncommented and the user is the same user as your ELK VM. It should look like [this](Diagrams/ansible.png)
 - Run `ansible-playbook filebeat-playbook.yml` on the command line to complete the installation
-![installation.png](
+![installation.png](https://github.com/nona-hu/Cybersecurity/blob/main/Diagrams/installation.png)
 
 - 

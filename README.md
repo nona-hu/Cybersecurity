@@ -38,36 +38,41 @@ The configuration details of each machine may be found below.
 |----------|----------|------------|------------------|
 | Jump Box | Gateway  | 10.0.0.5   | Ubuntu Linux     |
 | Web 1    | Webserver| 10.0.0.6   | Ubuntu Linux     |
-| Web 2    | Webserver| 10.0.0.4   | Ubuntu Linux     |
 | ELK      | ElasticSearch | 10.2.0.4   | Ubuntu Linux     |
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the Jumpbox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- Any with SSH key 
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed by the Jumpbox.
+Jumpbox
+- Public IP: 20.213.109.184
+- Private IP: 10.0.0.5
 
 A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Jump Box | SSH Port 22/ YES    | Any with SSH key     |
+|  ELK     | Kibana Port 5601/ YES| 10.2.0.4            |
+| HTTPS    | HTTP Port 443/ YES  | Any                  |
+| HTTP     | HTTP Port 80/ YES   | Any                  | 
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because doing so reduces the risk of configuration errors
+
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- Install Docker: Installs docker to remote server
+- Install Python3_pip: Pip facilitates the installtion of other modules
+- Docker Module: Asks Pip to install the docker modules
+- Increase Memory: Requests the server to use more memory when using the Docker image
+- Download and launch ELK container: Downloads ELK container with the public ports
+
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -75,13 +80,21 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+- 10.0.0.5
+- 10.2.0.4
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+
+- Filebeat was installed on Web1 
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+
+Different types of beats can be installed on servers to collect and send various information to ElasticSearch.
+
+- #Auditbeat - collects and audits data in relation to users and processes on the chosen system
+- #Filebeat - forwards and centralises log data. e.g. system logs, user logins etc.
+- #Functionbeat - collects and forwards data in a serverless network architecture
+- #Heartbeat - 
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 

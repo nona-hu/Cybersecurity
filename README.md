@@ -107,6 +107,14 @@ SSH into the control node and follow the steps below:
 - Copy the [install-elk.yml](Diagrams/install-elk.png) file to /etc/ansible directory. Ensure the remote_user is the same username on your ELK VM. i have used azureuser. 
 - Update the [hosts file](Diagrams/hosts.png) to include the destination IPs and attributes
 - The ELK server runs on port 5601. Create an incoming rule to allow TCP traffic over port 5601 from your IP address. 
-- Run the playbook, and verify that you can load the ELK stack server from your browser at http://[your.VM.IP]:5601/app/kibana
+- Run the playbook, and verify that you can load the ELK stack server from your browser at http://[your.VM.IP]:5601/app/kibana. 
+- If configured correctly, you should see this kibana [homepage]
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+### Installing Filebeat
+
+Filebeat forwards and centrallises log data and is useful for monitoring system logs.
+
+To install filebeat you must first SSH into the Jumpbox and launch the ansible container. Then follow the below steps:
+- Copy the Filebeat configuration file using the 'curl' command 
+' curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat >> /etc/ansible/filebeat-config.yml '
+

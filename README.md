@@ -91,22 +91,21 @@ These Beats allow us to collect the following information from each machine:
 
 Different types of beats can be installed on servers to collect and send various information to ElasticSearch.
 
-- #Auditbeat - collects and audits data in relation to users and processes on the chosen system
-- #Filebeat - forwards and centralises log data. e.g. system logs, user logins etc.
-- #Functionbeat - collects and forwards data in a serverless network architecture
-- #Heartbeat - 
+- Auditbeat - collects and audits data in relation to users and processes on the chosen system
+- Filebeat - forwards and centralises log data. e.g. system logs, user logins etc.
+- Functionbeat - collects and forwards data in a serverless network architecture
+- Heartbeat - monitors systems for their uptime through probing
+- Metricbeat - collects metric data from all systems including cpu usage, memory, file system etc.
+- Packetbeat - monitors network traffic and protocols to gain a better understanding of how traffic is flowing in a system
+- Winlogbeat - collects Windows event logs 
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
-
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+- Copy the install-elk.yml file to /etc/ansible directory. Ensure the remote_user is the same username on your ELK VM. i have used azureuser. 
+- Update the [hosts file] to include the destination IPs and attributes
+- The ELK server runs on port 5601. Create an incoming rule to allow TCP traffic over port 5601 from your IP address. 
+- Run the playbook, and verify that you can load the ELK stack server from your browser at http://[your.VM.IP]:5601/app/kibana
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._

@@ -106,15 +106,22 @@ In order to use the playbook, you will need to have an Ansible control node alre
 SSH into the control node and follow the steps below:
 - Copy the [install-elk.yml](Diagrams/install-elk.png) file to /etc/ansible directory. Ensure the remote_user is the same username on your ELK VM. i have used azureuser. 
 - Update the [hosts file](Diagrams/hosts.png) to include the destination IPs and attributes
-- The ELK server runs on port 5601. Create an incoming rule to allow TCP traffic over port 5601 from your IP address. 
+- The ELK server runs on `port 5601`. Create an incoming rule to allow TCP traffic over port 5601 from your IP address. 
 - Run the playbook, and verify that you can load the ELK stack server from your browser at http://[your.VM.IP]:5601/app/kibana. 
-- If configured correctly, you should see this kibana [homepage]
+- If configured correctly, you should see this kibana [homepage](Diagrams/kibanahome.png)
 
 ### Installing Filebeat
 
 Filebeat forwards and centrallises log data and is useful for monitoring system logs.
 
 To install filebeat you must first SSH into the Jumpbox and launch the ansible container. Then follow the below steps:
-- Copy the Filebeat configuration file using the `curl` command 
+- Copy the [Filebeat configuration file](https://github.com/nona-hu/Cybersecurity/blob/main/Ansible/filebeat-config.yml) using the `curl` command 
 ' `curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat >> /etc/ansible/filebeat-config.yml`
+- Scroll to line [#1106](Diagrams/Filebeatconfig1.png) and [#1806](Diagrams/Filebeatconfig2) and replace the IP address with the IP of your ELK machine. 
+- Make a new `files` directory in /etc/ansible directory and move the filebeat-config.yml file to this directory
+- Create another ansible playbook called filebeat-playbook.yml in /etc/ansible directory with the [instructions](Diagrams/Instructions.png). The playbook should look like [this](https://github.com/nona-hu/Cybersecurity/blob/main/Ansible/filebeat-playbook.yml)
+- Open the ansible-config.yml and ensure that the remote_user is uncommented and the user is the same user as your ELK VM. It should look like [this](Diagrams/ansible.png)
+- Run `ansible-playbook filebeat-playbook.yml` on the command line to complete the installation
+![installation.png](
 
+- 
